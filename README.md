@@ -16,7 +16,7 @@
 Then in your Meteor project
 
 ```bash
-meteor add kschingiz:meteor-elastic-apm
+meteor add julusian:meteor-elastic-apm
 ```
 
 Maybe you will need to also install
@@ -28,10 +28,10 @@ meteor add http mongo-livequery
 Then somewhere in your server code, Elastic documentation says that Agent.start should be executed before anything else, and should be at the very top of your code
 
 ```js
-import Agent from 'meteor/kschingiz:meteor-elastic-apm';
+import Agent from 'meteor/julusian:meteor-elastic-apm';
 
 const options = {
-  serviceName: 'meteor-demo-app'
+  serviceName: 'meteor-demo-app',
 };
 Agent.start(options);
 ```
@@ -40,13 +40,13 @@ Complete list of [Agent options](https://www.elastic.co/guide/en/apm/agent/nodej
 
 In addition, this plugin supports the following Agent options:
 
-* active - Boolean value which determins if monitoring is active. Default: `true`
-* disableMeteorInstrumentations - An array of meteor related instrumentations which should not be recorded. Default: `[]`. Possible values: `['methods', 'session', 'subscription', 'async', 'db, 'metrics']`
+- active - Boolean value which determins if monitoring is active. Default: `true`
+- disableMeteorInstrumentations - An array of meteor related instrumentations which should not be recorded. Default: `[]`. Possible values: `['methods', 'session', 'subscription', 'async', 'db, 'metrics']`
 
 ## What it monitors
 
 1. Meteor methods: method params, result, exceptions, stack trace
-   * Ignores methods starting with `_FilesCollectionWrite_`. (See: https://github.com/Meteor-Community-Packages/meteor-elastic-apm/issues/30)
+   - Ignores methods starting with `_FilesCollectionWrite_`. (See: https://github.com/Meteor-Community-Packages/meteor-elastic-apm/issues/30)
 2. Meteor pub/sub: tracks publications response time, params, exceptions, result
 3. Meteor collection methods(find, insert, etc...): params, result, execution time
 4. MongoDB cursor method(fetch, map, etc...): params, result, execution time

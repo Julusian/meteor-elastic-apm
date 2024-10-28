@@ -30,6 +30,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
-  api.use('kschingiz:meteor-elastic-apm');
+  api.use('julusian:meteor-elastic-apm');
   api.mainModule('meteor-elastic-apm-tests.js');
 });
