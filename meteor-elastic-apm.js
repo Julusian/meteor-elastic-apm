@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 const shimmer = require('shimmer');
-const Fibers = require('fibers');
 const Agent = require('elastic-apm-node');
 
 const { Session, Subscription, MongoCursor } = require('./meteorx');
@@ -10,7 +9,6 @@ const instrumentHttpIn = require('./instrumenting/http-in');
 const instrumentHttpOut = require('./instrumenting/http-out');
 const instrumentSession = require('./instrumenting/session');
 const instrumentSubscription = require('./instrumenting/subscription');
-const instrumentAsync = require('./instrumenting/async');
 const instrumentDB = require('./instrumenting/db');
 const startMetrics = require('./metrics');
 
@@ -44,7 +42,6 @@ shimmer.wrap(Agent, 'start', function(startAgent) {
               methods: () => instrumentMethods(Agent, Meteor),
               session: () => instrumentSession(Agent, Session),
               subscription: () => instrumentSubscription(Agent, Subscription),
-              async: () => instrumentAsync(Agent, Fibers),
               db: () => {
                 hackDB();
                 instrumentDB(Agent, Meteor, MongoCursor);

@@ -3,7 +3,7 @@ const newAgent = require('./mocks/agent');
 const newMeteor = require('./mocks/meteor');
 const newMongoCursor = require('./mocks/mongoCursor');
 
-test('track meteor collection methods (fibers)', () => {
+test('track meteor collection methods', () => {
   const agent = newAgent();
   const Meteor = newMeteor();
   const MongoCursor = newMongoCursor();

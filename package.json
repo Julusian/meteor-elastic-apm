@@ -1,6 +1,6 @@
 {
   "name": "meteor-elastic-apm",
-  "version": "2.5.1",
+  "version": "3.0.0",
   "description": "Performance Monitoring for Meteor based on Elastic APM",
   "main": "meteor-elastic-apm.js",
   "scripts": {
@@ -34,7 +34,7 @@
   "homepage": "https://github.com/kschingiz/meteor-elastic-apm#readme",
   "dependencies": {
     "elastic-apm-node": "3.15.0",
-    "fibers": "^4.0.3",
     "shimmer": "1.2.1"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
