@@ -19,8 +19,8 @@ Npm.depends({
 Package.onUse(function(api) {
   api.versionsFrom('3.0');
 
-  api.use('kschingiz:meteor-measured@1.0.3');
-  api.imply('kschingiz:meteor-measured');
+  api.use('skadmin:meteor-measured@1.0.4');
+  api.imply('skadmin:meteor-measured');
 
   api.use(['ecmascript', 'mongo', 'minimongo', 'ddp', 'ddp-common', 'webapp', 'random']);
 
